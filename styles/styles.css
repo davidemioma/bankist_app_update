@@ -1,0 +1,308 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-body: #f3f3f3;
+  --color-text: #444;
+  --color-red: linear-gradient(to top left, #e52a5a, #ff585f);
+  --color-green: linear-gradient(to top left, #39b385, #9be15d);
+  --color-yellow: linear-gradient(to top left, #ffb003, #ffcb03);
+  --text-green: #66c873;
+  --text-red: #f5465d;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-body);
+  color: var(--color-text);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+p {
+  font-size: 1.9rem;
+}
+
+/* Navigation bar */
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.welcome {
+  font-weight: 500;
+}
+
+.logo {
+  height: 5.25rem;
+}
+
+.login {
+  display: flex;
+  gap: 1rem;
+}
+
+.login_input {
+  border: 0;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 13rem;
+  border-radius: 10px;
+  color: inherit;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+}
+
+.login_input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.login_input::placeholder {
+  color: #bbb;
+}
+
+.login_btn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login_btn:hover,
+.login_btn:focus,
+.btn_sort:hover,
+.btn_sort:focus {
+  outline: none;
+  color: #777;
+}
+
+/* MAIN */
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.app.active {
+  opacity: 100;
+}
+
+/* Balance */
+.balance {
+  display: flex;
+  grid-column: 1 / span 2;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance_label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.balance_date {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.balance_value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+/* Movement */
+.movement {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.movement_row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.movement_type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.movement_type-deposit {
+  background-image: var(--color-green);
+}
+
+.movement_type-withdrawal {
+  background-image: var(--color-red);
+}
+
+.movement_date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.movement_value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+/* Summary */
+.summary {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.summary_label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.summary_value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary_value-in,
+.summary_value-interest {
+  color: var(--text-green);
+}
+
+.summary_value-out {
+  color: var(--text-red);
+}
+
+.btn_sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Operations */
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  color: #333;
+}
+
+.operation_transfer {
+  background-image: var(--color-yellow);
+}
+
+.operation_loan {
+  background-image: var(--color-green);
+}
+
+.operation_close {
+  background-image: var(--color-red);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+.form.form_loan {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+
+.form_label-loan {
+  grid-row: 2;
+}
+
+.form_input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form_input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form_label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.form_btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form_btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logout_timer {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+.timer {
+  font-weight: 600;
+}

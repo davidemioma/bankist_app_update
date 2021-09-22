@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist App</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav_bar">
+      <p class="welcome">Log in to get started</p>
+      <img class="logo" src="./images/logo.png" alt="" />
+      <form action="" class="login">
+        <input
+          type="text"
+          placeholder="User"
+          class="login_input login_input-user"
+        />
+
+        <input
+          type="password"
+          placeholder="PIN"
+          maxlength="4"
+          class="login_input login_input-pin"
+        />
+
+        <button class="login_btn">&rarr;</button>
+      </form>
+    </nav>
+
+    <main class="app">
+      <!-- Balance -->
+      <div class="balance">
+        <div>
+          <p class="balance_label">Current balance</p>
+          <p class="balance_date">
+            As of
+            <span class="date">05/03/2037</span>
+          </p>
+        </div>
+        <p class="balance_value">0000€</p>
+      </div>
+
+      <!-- Movement -->
+      <div class="movement">
+        <div class="movement_row">
+          <div class="movement_type movement_type-deposit">2 deposit</div>
+          <div class="movement_date">3 days ago</div>
+          <div class="movement_value">4000€</div>
+        </div>
+
+        <div class="movement_row">
+          <div class="movement_type movement_type-withdrawal">2 deposit</div>
+          <div class="movement_date">24/01/2037</div>
+          <div class="movement_value">378€</div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="summary">
+        <p class="summary_label">In</p>
+        <p class="summary_value summary_value-in">0000€</p>
+        <p class="summary_label">Out</p>
+        <p class="summary_value summary_value-out">0000€</p>
+        <p class="summary_label">Interest</p>
+        <p class="summary_value summary_value-interest">0000€</p>
+        <button class="btn_sort">&downarrow; SORT</button>
+      </div>
+
+      <!-- Operation Transfer -->
+      <div class="operation operation_transfer">
+        <h2>Transfer money</h2>
+        <form action="" class="form form_transfer">
+          <input class="form_input form_input-to" type="text" />
+          <input class="form_input form_input-amount" type="number" />
+          <button class="form_btn form_btn-transfer">&rarr;</button>
+          <label class="form_label">Transfer to</label>
+          <label class="form_label">Amount</label>
+        </form>
+      </div>
+
+      <!-- Operation Loan -->
+      <div class="operation operation_loan">
+        <h2>Request loan</h2>
+        <form action="" class="form form_loan">
+          <input class="form_input form_input-loan-amount" type="number" />
+          <button class="form_btn form_btn-loan">&rarr;</button>
+          <label class="form_label form_label-loan">Amount</label>
+        </form>
+      </div>
+
+      <!-- Operation Close -->
+      <div class="operation operation_close">
+        <h2>Close Account</h2>
+        <form action="" class="form form_close">
+          <input class="form_input form_input-user" type="text" />
+          <input class="form_input form_input-pin" type="password" />
+          <button class="form_btn form_btn-close">&rarr;</button>
+          <label class="form_label">Confirm user</label>
+          <label class="form_label">Confirm pin</label>
+        </form>
+      </div>
+
+      <!-- Logout Timer -->
+      <p class="logout_timer">
+        You will be logged out in <span class="timer"></span>
+      </p>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
